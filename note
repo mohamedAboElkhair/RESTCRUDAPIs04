@@ -1,1 +1,9 @@
-24
+34
+
+
+Development Process
+1 Update db configs in application
+create Employee entity
+create DAO inerface
+Create DAO implementation
+Create Rest Controller to use DAO

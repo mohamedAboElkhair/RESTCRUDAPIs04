@@ -20,12 +20,11 @@ public class StudentController {
         theStudents.add(new Student("hamed", "mohamed"));
     }
 
-
-
     @GetMapping("/students")
     public List<Student> getStudent() {
         return theStudents;
     }
+
     @GetMapping("/students/{studentId}")
     public Student getStudentById(@PathVariable int studentId) {
         if ((studentId >= theStudents.size()) || (studentId < 0)) {
