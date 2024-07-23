@@ -22,4 +22,23 @@ public class EmployeeDaolmp implements EmployeeDao {
         List<Employee> employees = theQuery.getResultList();
         return employees;
     }
+
+    @Override
+    public Employee findById(int id) {
+        // get employee
+        Employee theEmployee = entityManager.find(Employee.class, id);
+        return theEmployee;
+    }
+
+    @Override
+    public Employee save(Employee employee) {
+        Employee theEmployee = entityManager.merge(employee);
+        return theEmployee;
+    }
+
+    @Override
+    public void delete(int theId) {
+        Employee theEmployee = entityManager.find(Employee.class, theId);
+        entityManager.remove(theEmployee);
+    }
 }
